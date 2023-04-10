@@ -41,7 +41,7 @@ def choose():
         time.sleep(2)
 
     player = buttons(["Jouer", "IA"], "choisissez le joueur")
-    difficulty = DIFFICULTES[str(buttons(["Debutant", "Medium", "Expert", "Surhumain", "Alien"],
+    difficulty = DIFFICULTES[str(buttons(["Debutant", "Medium", "Expert", "Surhomme", "Alien"],
                                          "choisissez la difficulté") + 1)]
     if player:
         continuous = False if buttons(["Continu", "Controle"], "") else True

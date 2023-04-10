@@ -139,7 +139,7 @@ class Board:
         while cords_to_click:
             cur = cords_to_click.pop()
             if (cur != cords and self.flag_discovered[cur[1]][cur[0]] == FLAG_DISC_DISC) or \
-			self.flag_discovered[cur[1]][cur[0]] == FLAG_DISC_FLAG:
+                    self.flag_discovered[cur[1]][cur[0]] == FLAG_DISC_FLAG:
                 continue
             self.flag_discovered[cur[1]][cur[0]] = FLAG_DISC_DISC
 
