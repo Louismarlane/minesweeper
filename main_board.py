@@ -155,12 +155,8 @@ class Board:
             # autant de drapeaux autour de la case que de mines indiquées.
             if self.get_numb_flags(cur) == self.__get_numbs(cur):
                 # on rajoute ici toutes les coordonnées qui n'ont pas été déjà cliquées ou qui
-                # ne sont pas déjà dans la liste. (Pardon de la pythonnesquerie)
-                cords_to_click += [
-                    (i, j) for i in range(cur[0] - 1, cur[0] + 2) for j in range(cur[1] - 1, cur[1] + 2)
-                    if (i, j) != cur and 0 <= i < self._size[0] and 0 <= j < self._size[1] and
-                       (i, j) not in cords_to_click and self.flag_discovered[j][i] == FLAG_DISC_BLANK
-                ]
+                # ne sont pas déjà dans la liste.
+                cords_to_click += [el for el in self.get_blanks(cur) if el not in cords_to_click]
         return False
 
     def put_flag(self, cords: tuple[int, int]) -> None:
